@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>骨盤整体院 yururi｜産後・女性専門 三軒茶屋</title>
+  <meta name="description" content="三軒茶屋駅徒歩3分。女性施術師のみ在籍・赤ちゃん同室OK・初回体験2,980円。産後骨盤矯正・姿勢改善の専門院。施術実績3,500人以上。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #3a3a3a;
+      background: #fff;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ===== Design Tokens ===== */
+    :root {
+      --pink:        #C4808A;
+      --pink-light:  #F5E8EA;
+      --pink-dark:   #A0606A;
+      --green:       #8BAF9C;
+      --green-light: #D8EDE3;
+      --text-dark:   #3a3a3a;
+      --text-mid:    #666;
+      --text-light:  #999;
+      --bg-light:    #FDF6F7;
+      --bg-section:  #F9F4F5;
+      --border:      #E8D5D7;
+      --shadow:      0 4px 24px rgba(196,128,138,.12);
+      --shadow-hover:0 8px 36px rgba(196,128,138,.22);
+      --radius:      12px;
+      --max-w:       1100px;
+    }
+
+    /* ===== Layout ===== */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+    .section    { padding: 88px 0; }
+    .section--light   { background: var(--bg-light); }
+    .section--primary { background: linear-gradient(135deg, #FDF0F2 0%, #F0F5F2 100%); }
+
+    /* ===== Section Header ===== */
+    .sec-header { text-align: center; margin-bottom: 56px; }
+    .sec-label {
+      display: inline-block;
+      font-size: .72rem; font-weight: 700; letter-spacing: .16em;
+      color: var(--pink); background: var(--pink-light);
+      padding: 6px 18px; border-radius: 100px; margin-bottom: 16px;
+    }
+    .sec-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--text-dark); line-height: 1.55; margin-bottom: 14px;
+    }
+    .sec-title span { color: var(--pink); }
+    .sec-desc { font-size: .92rem; color: var(--text-mid); max-width: 520px; margin: 0 auto; }
+    .divider { width: 44px; height: 3px; background: var(--pink); border-radius: 2px; margin: 16px auto 0; }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: 'Noto Sans JP', sans-serif; font-weight: 700;
+      border: none; border-radius: 100px; cursor: pointer;
+      transition: all .25s ease; letter-spacing: .04em;
+    }
+    .btn-primary {
+      background: var(--pink); color: #fff; font-size: 1rem; padding: 16px 40px;
+      box-shadow: 0 4px 16px rgba(196,128,138,.4);
+    }
+    .btn-primary:hover { background: var(--pink-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,128,138,.5); }
+    .btn-outline {
+      background: transparent; color: var(--pink); font-size: 1rem;
+      border: 2px solid var(--pink); padding: 14px 36px;
+    }
+    .btn-outline:hover { background: var(--pink); color: #fff; transform: translateY(-2px); }
+    .btn-lg { font-size: 1.08rem; padding: 18px 52px; }
+
+    /* ===== HEADER ===== */
+    #header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow .3s;
+    }
+    #header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
+    .header-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
+      height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .logo-wrap { display: flex; flex-direction: column; line-height: 1.2; }
+    .logo-main { font-family: 'Noto Serif JP', serif; font-size: 1.3rem; font-weight: 700; color: var(--pink); }
+    .logo-sub  { font-size: .64rem; color: var(--text-mid); letter-spacing: .06em; }
+    .header-nav { display: flex; align-items: center; gap: 28px; }
+    .header-nav a { font-size: .84rem; font-weight: 500; color: var(--text-dark); transition: color .2s; }
+    .header-nav a:hover { color: var(--pink); }
+    .header-right { display: flex; align-items: center; gap: 16px; }
+    .header-tel-wrap { text-align: right; }
+    .header-tel-label { font-size: .62rem; color: var(--text-mid); }
+    .header-tel-num   { font-size: 1.05rem; font-weight: 700; color: var(--text-dark); letter-spacing: .04em; }
+    .header-tel-hours { font-size: .62rem; color: var(--text-mid); }
+    .btn-header {
+      background: var(--pink); color: #fff;
+      padding: 10px 22px; border-radius: 100px;
+      font-size: .84rem; font-weight: 700;
+      transition: all .2s; white-space: nowrap;
+    }
+    .btn-header:hover { background: var(--pink-dark); transform: translateY(-1px); }
+
+    /* Hamburger */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text-dark); border-radius: 2px; transition: all .3s; }
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav {
+      display: none; position: fixed; top: 70px; left: 0; right: 0;
+      background: #fff; border-top: 1px solid var(--border); z-index: 999;
+      padding: 20px 24px; flex-direction: column; gap: 4px;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      font-size: .95rem; font-weight: 500; color: var(--text-dark);
+      padding: 13px 0; border-bottom: 1px solid var(--border); display: block;
+    }
+    .mobile-nav a:last-child { margin-top: 16px; border: none; text-align: center; }
+
+    /* ===== HERO ===== */
+    #hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center;
+      padding-top: 70px; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(253,246,247,1) 0%, rgba(253,246,247,.9) 45%, rgba(216,237,227,.65) 100%);
+      z-index: 1;
+    }
+    .hero-img {
+      position: absolute; right: 0; top: 0; bottom: 0; width: 52%;
+      background: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=900&q=80') center/cover no-repeat;
+      z-index: 0;
+    }
+    .hero-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(253,246,247,1) 0%, rgba(253,246,247,.6) 35%, transparent 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: var(--max-w); margin: 0 auto;
+      padding: 80px 24px; width: 100%;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--pink-light); border: 1px solid var(--border);
+      border-radius: 100px; padding: 8px 20px;
+      font-size: .78rem; font-weight: 700; color: var(--pink-dark);
+      margin-bottom: 28px;
+    }
+    .hero-heading {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+      line-height: 1.55; color: var(--text-dark);
+      margin-bottom: 24px; max-width: 560px;
+    }
+    .hero-heading .accent { color: var(--pink); }
+    .hero-sub {
+      font-size: 1rem; color: var(--text-mid);
+      max-width: 460px; margin-bottom: 44px; line-height: 2;
+    }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 56px; }
+    .hero-stats { display: flex; flex-wrap: wrap; gap: 32px; }
+    .stat-num   { font-family: 'Noto Serif JP', serif; font-size: 2rem; font-weight: 700; color: var(--pink); line-height: 1; }
+    .stat-num small { font-size: 1rem; }
+    .stat-label { font-size: .72rem; color: var(--text-mid); margin-top: 4px; }
+
+    /* ===== PAIN POINTS ===== */
+    .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+    .pain-card {
+      background: #fff; border: 2px solid var(--border); border-radius: var(--radius);
+      padding: 24px 16px; text-align: center; transition: all .25s;
+    }
+    .pain-card:hover { border-color: var(--pink); transform: translateY(-4px); box-shadow: var(--shadow); }
+    .pain-icon { font-size: 2rem; margin-bottom: 10px; }
+    .pain-text { font-size: .88rem; font-weight: 500; color: var(--text-dark); line-height: 1.65; }
+    .pain-bottom {
+      margin-top: 44px; text-align: center;
+      background: #fff; border: 2px solid var(--pink);
+      border-radius: var(--radius); padding: 28px 32px;
+    }
+    .pain-bottom p { font-family: 'Noto Serif JP', serif; font-size: 1.1rem; color: var(--pink-dark); }
+
+    /* ===== REASONS ===== */
+    .reason-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
+    .reason-card {
+      background: #fff; border-radius: var(--radius);
+      padding: 40px 28px; box-shadow: var(--shadow);
+      position: relative; transition: transform .25s, box-shadow .25s;
+    }
+    .reason-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .reason-num {
+      position: absolute; top: -15px; left: 28px;
+      background: var(--pink); color: #fff;
+      font-size: .72rem; font-weight: 700; letter-spacing: .12em;
+      padding: 4px 14px; border-radius: 100px;
+    }
+    .reason-icon {
+      width: 60px; height: 60px;
+      background: var(--pink-light); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; color: var(--pink); margin-bottom: 18px;
+    }
+    .reason-title { font-family: 'Noto Serif JP', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
+    .reason-text  { font-size: .88rem; color: var(--text-mid); line-height: 2; }
+    .reason-tag {
+      display: inline-block; margin-top: 14px;
+      background: var(--green-light); color: #3D7A60;
+      font-size: .72rem; font-weight: 700; padding: 4px 12px; border-radius: 100px;
+    }
+
+    /* ===== MENU ===== */
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    .menu-card {
+      background: #fff; border-radius: var(--radius);
+      overflow: hidden; box-shadow: var(--shadow);
+      border: 2px solid transparent; transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .menu-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--pink); }
+    .menu-card.featured { border-color: var(--pink); position: relative; }
+    .menu-card.featured::after {
+      content: '★ 一番人気';
+      position: absolute; top: 12px; right: 12px;
+      background: var(--pink); color: #fff;
+      font-size: .68rem; font-weight: 700; padding: 4px 10px; border-radius: 100px;
+    }
+    .menu-head { background: var(--pink-light); padding: 18px 22px; }
+    .menu-head.green { background: var(--green-light); }
+    .menu-name { font-family: 'Noto Serif JP', serif; font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+    .menu-dur  { font-size: .78rem; color: var(--text-mid); }
+    .menu-body { padding: 18px 22px; }
+    .menu-price-wrap { display: flex; align-items: flex-end; gap: 10px; margin-bottom: 12px; }
+    .price-trial     { font-size: 1.6rem; font-weight: 700; color: var(--pink); line-height: 1; }
+    .price-trial small{ font-size: .85rem; }
+    .price-normal    { font-size: .78rem; color: var(--text-light); text-decoration: line-through; }
+    .price-trial-label{ font-size: .68rem; color: var(--pink); font-weight: 700; display: block; margin-bottom: 2px; }
+    .price-regular   { font-size: 1.45rem; font-weight: 700; color: var(--text-dark); line-height: 1; }
+    .price-regular small{ font-size: .82rem; }
+    .menu-desc { font-size: .84rem; color: var(--text-mid); line-height: 1.85; }
+    .menu-guarantee {
+      margin-top: 44px; border-radius: var(--radius); padding: 28px 32px;
+      text-align: center;
+      background: linear-gradient(135deg, #FDF0F2 0%, #EDF5F1 100%);
+      border: 2px solid var(--pink-light);
+    }
+    .menu-guarantee h3 { font-family: 'Noto Serif JP', serif; font-size: 1.1rem; color: var(--pink-dark); margin-bottom: 8px; }
+    .menu-guarantee p  { font-size: .88rem; color: var(--text-mid); }
+
+    /* ===== COMPARISON ===== */
+    .comparison-wrap { overflow-x: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .comp-table { width: 100%; border-collapse: collapse; background: #fff; min-width: 540px; }
+    .comp-table th { padding: 18px 22px; text-align: center; font-size: .88rem; font-weight: 700; }
+    .comp-table th.col-us { background: var(--pink); color: #fff; font-size: .95rem; }
+    .comp-table th.col-other { background: var(--bg-section); color: var(--text-mid); }
+    .comp-table th.col-feat  { background: var(--bg-section); text-align: left; padding-left: 28px; }
+    .comp-table td { padding: 14px 22px; font-size: .88rem; border-top: 1px solid var(--border); text-align: center; }
+    .comp-table td.col-feat  { text-align: left; font-weight: 500; background: var(--bg-light); padding-left: 28px; }
+    .comp-table td.col-us    { background: rgba(196,128,138,.04); font-weight: 700; }
+    .check { color: var(--green); font-size: 1.1rem; }
+    .cross { color: #ccc; font-size: 1rem; }
+
+    /* ===== TESTIMONIALS ===== */
+    .voice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px; }
+    .voice-card {
+      background: #fff; border-radius: var(--radius); padding: 28px;
+      box-shadow: var(--shadow); border-left: 4px solid var(--pink);
+      transition: transform .25s;
+    }
+    .voice-card:hover { transform: translateY(-4px); }
+    .voice-stars { color: #F5B731; font-size: .95rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .voice-text  { font-size: .92rem; line-height: 2; color: var(--text-dark); margin-bottom: 18px; }
+    .voice-author { display: flex; align-items: center; gap: 12px; }
+    .author-avatar {
+      width: 46px; height: 46px; border-radius: 50%;
+      background: var(--pink-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
+    }
+    .author-name   { font-weight: 700; font-size: .88rem; color: var(--text-dark); }
+    .author-detail { font-size: .76rem; color: var(--text-light); margin-top: 2px; }
+
+    /* ===== PROFILE ===== */
+    .profile-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: start; }
+    .profile-img  { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .profile-img img { width: 100%; }
+    .profile-name { font-family: 'Noto Serif JP', serif; font-size: 1.6rem; font-weight: 700; margin-bottom: 4px; }
+    .profile-role { font-size: .84rem; color: var(--pink); font-weight: 700; margin-bottom: 18px; }
+    .badge-list   { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .badge {
+      background: var(--pink-light); border: 1px solid var(--border);
+      color: var(--pink-dark); font-size: .74rem; font-weight: 700;
+      padding: 5px 12px; border-radius: 100px;
+    }
+    .profile-bio { font-size: .92rem; color: var(--text-mid); line-height: 2; margin-bottom: 20px; }
+    .profile-stats {
+      display: flex; gap: 28px; flex-wrap: wrap;
+      background: var(--bg-light); border-radius: var(--radius); padding: 22px 26px;
+    }
+    .ps-num   { font-family: 'Noto Serif JP', serif; font-size: 1.55rem; font-weight: 700; color: var(--pink); line-height: 1; }
+    .ps-num small { font-size: .82rem; }
+    .ps-label { font-size: .72rem; color: var(--text-mid); margin-top: 4px; }
+
+    /* ===== FAQ ===== */
+    .faq-list { max-width: 740px; margin: 0 auto; }
+    .faq-item { border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 10px; overflow: hidden; background: #fff; }
+    .faq-q {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 22px; cursor: pointer; user-select: none; transition: background .2s;
+    }
+    .faq-q:hover { background: var(--bg-light); }
+    .faq-q-inner { display: flex; align-items: center; gap: 12px; font-weight: 500; font-size: .92rem; }
+    .faq-q-badge {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--pink); color: #fff;
+      font-size: .72rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .faq-chevron { color: var(--pink); transition: transform .3s; font-size: .9rem; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-a { display: none; padding: 0 22px 18px 60px; font-size: .88rem; color: var(--text-mid); line-height: 2; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ===== ACCESS ===== */
+    .access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .access-map {
+      border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+      background: #EDE8E8; height: 320px;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 10px; text-align: center;
+    }
+    .access-map i { font-size: 2.5rem; color: var(--pink); }
+    .access-map p { font-size: .84rem; color: var(--text-mid); }
+    .access-info  { display: flex; flex-direction: column; gap: 22px; }
+    .ai-item      { display: flex; gap: 14px; align-items: flex-start; }
+    .ai-icon {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--pink-light); color: var(--pink);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .95rem; flex-shrink: 0;
+    }
+    .ai-label { font-size: .7rem; font-weight: 700; color: var(--text-light); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 3px; }
+    .ai-value { font-size: .92rem; font-weight: 500; }
+    .ai-sub   { font-size: .78rem; color: var(--text-mid); }
+    .hours-grid { display: grid; grid-template-columns: auto 1fr; gap: 3px 14px; font-size: .84rem; }
+    .h-day  { color: var(--text-mid); font-weight: 500; }
+    .h-time { color: var(--text-dark); }
+    .h-off  { color: #E0A0A8; }
+
+    /* ===== BOOKING ===== */
+    .booking-wrap {
+      max-width: 620px; margin: 0 auto;
+      background: #fff; border-radius: 16px; padding: 44px 48px;
+      box-shadow: 0 8px 48px rgba(196,128,138,.16);
+    }
+    .demo-notice {
+      background: var(--green-light); border: 1px solid var(--green);
+      border-radius: 8px; padding: 11px 16px;
+      font-size: .78rem; color: #3D7A60;
+      display: flex; align-items: center; gap: 8px; margin-bottom: 24px;
+    }
+    .form-group  { margin-bottom: 18px; }
+    .form-label  { display: flex; align-items: center; gap: 6px; font-size: .84rem; font-weight: 700; margin-bottom: 7px; }
+    .f-req { background: var(--pink); color: #fff; font-size: .62rem; padding: 2px 6px; border-radius: 4px; }
+    .f-opt { background: var(--bg-section); color: var(--text-light); font-size: .62rem; padding: 2px 6px; border-radius: 4px; }
+    .f-input, .f-select, .f-textarea {
+      width: 100%; padding: 11px 14px;
+      border: 2px solid var(--border); border-radius: 8px;
+      font-family: 'Noto Sans JP', sans-serif; font-size: .92rem;
+      color: var(--text-dark); background: #fff; transition: border-color .2s; appearance: none;
+    }
+    .f-input:focus, .f-select:focus, .f-textarea:focus {
+      outline: none; border-color: var(--pink); box-shadow: 0 0 0 3px rgba(196,128,138,.14);
+    }
+    .f-textarea { min-height: 110px; resize: vertical; }
+    .form-row   { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-foot  { text-align: center; margin-top: 28px; }
+    .form-note  { font-size: .75rem; color: var(--text-light); margin-top: 10px; }
+    .demo-done {
+      display: none; background: var(--green-light); border: 2px solid var(--green);
+      border-radius: var(--radius); padding: 32px; text-align: center; margin-top: 20px;
+    }
+    .demo-done i { font-size: 2.4rem; color: var(--green); display: block; margin-bottom: 12px; }
+    .demo-done p { font-size: .88rem; color: #3D7A60; line-height: 1.9; }
+
+    /* ===== FOOTER ===== */
+    #footer { background: #2B1E1E; color: rgba(255,255,255,.65); padding: 52px 0 24px; }
+    .footer-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px;
+      padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,.1); margin-bottom: 22px;
+    }
+    .footer-logo  { font-family: 'Noto Serif JP', serif; font-size: 1.25rem; color: #fff; margin-bottom: 10px; }
+    .footer-desc  { font-size: .82rem; line-height: 1.9; }
+    .footer-col-h { font-size: .82rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+    .footer-links { display: flex; flex-direction: column; gap: 8px; }
+    .footer-links a { font-size: .78rem; transition: color .2s; }
+    .footer-links a:hover { color: var(--pink-light); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .footer-copy { font-size: .74rem; }
+    .footer-demo-tag {
+      font-size: .7rem; background: rgba(196,128,138,.25); border: 1px solid rgba(196,128,138,.4);
+      color: rgba(255,200,200,.9); padding: 3px 12px; border-radius: 100px;
+    }
+
+    /* ===== FLOATING CTA ===== */
+    .float-cta {
+      position: fixed; bottom: 24px; right: 24px; z-index: 900;
+      display: flex; flex-direction: column; gap: 10px;
+      opacity: 0; transform: translateY(12px);
+      transition: all .4s; pointer-events: none;
+    }
+    .float-cta.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .float-btn {
+      display: flex; align-items: center; gap: 9px;
+      padding: 13px 20px; border-radius: 100px; font-size: .82rem; font-weight: 700;
+      border: none; cursor: pointer; box-shadow: 0 4px 18px rgba(0,0,0,.15);
+      transition: transform .2s, box-shadow .2s; text-decoration: none; white-space: nowrap;
+    }
+    .float-btn:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 26px rgba(0,0,0,.2); }
+    .float-btn-web { background: var(--pink); color: #fff; }
+    .float-btn-tel { background: var(--green); color: #fff; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+      .header-nav, .header-tel-wrap { display: none; }
+      .hamburger { display: flex; }
+      .profile-grid { grid-template-columns: 1fr; }
+      .profile-img  { max-width: 340px; }
+      .access-grid  { grid-template-columns: 1fr; }
+      .footer-grid  { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .section { padding: 60px 0; }
+      .hero-heading { font-size: 1.75rem; }
+      .hero-stats   { gap: 20px; }
+      .form-row     { grid-template-columns: 1fr; }
+      .booking-wrap { padding: 28px 20px; }
+      .footer-grid  { grid-template-columns: 1fr; gap: 28px; }
+      .float-cta    { bottom: 16px; right: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header id="header">
+  <div class="header-inner">
+    <a href="#" class="logo-wrap">
+      <span class="logo-main">yururi</span>
+      <span class="logo-sub">骨盤整体院｜産後・女性専門 三軒茶屋</span>
+    </a>
+    <nav class="header-nav">
+      <a href="#reasons">選ばれる理由</a>
+      <a href="#menu">メニュー・料金</a>
+      <a href="#voice">お客様の声</a>
+      <a href="#access">アクセス</a>
+    </nav>
+    <div class="header-right">
+      <div class="header-tel-wrap">
+        <div class="header-tel-label">お電話でのご予約</div>
+        <div class="header-tel-num">03-0000-0000</div>
+        <div class="header-tel-hours">10:00〜21:00（火曜定休）</div>
+      </div>
+      <a href="#booking" class="btn-header">Web予約</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- モバイルナビ -->
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#reasons">選ばれる理由</a>
+  <a href="#menu">メニュー・料金</a>
+  <a href="#voice">お客様の声</a>
+  <a href="#profile">院長プロフィール</a>
+  <a href="#faq">よくある質問</a>
+  <a href="#access">アクセス</a>
+  <a href="#booking" class="btn btn-primary" style="border-radius:8px;padding:14px;justify-content:center;">初回体験を予約する</a>
+</nav>
+
+
+<!-- ========== HERO ========== -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-img"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="fa-solid fa-crown"></i>
+      三軒茶屋駅 南口 徒歩3分｜完全女性専用整体院
+    </div>
+    <h1 class="hero-heading">
+      産後の身体を、<br>
+      もう一度<span class="accent">あなたのものに</span>。
+    </h1>
+    <p class="hero-sub">
+      骨盤のゆがみが整うと、腰痛・肩こり・疲れやすさが変わります。<br>
+      女性施術師のみ在籍。赤ちゃん同室OK。<br>
+      初回体験は <strong>2,980円</strong>からご利用いただけます。
+    </p>
+    <div class="hero-cta">
+      <a href="#booking" class="btn btn-primary btn-lg">
+        <i class="fa-regular fa-calendar-check"></i> 初回体験を予約する
+      </a>
+      <a href="#menu" class="btn btn-outline btn-lg">
+        メニューを見る
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">3,500<small>人以上</small></div>
+        <div class="stat-label">累計施術実績</div>
+      </div>
+      <div>
+        <div class="stat-num">13<small>年</small></div>
+        <div class="stat-label">院長の施術歴</div>
+      </div>
+      <div>
+        <div class="stat-num">4.9<small>★</small></div>
+        <div class="stat-label">Googleクチコミ評価</div>
+      </div>
+      <div>
+        <div class="stat-num">初回<small></small></div>
+        <div class="stat-label">2,980円〜体験可</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== PAIN POINTS ========== -->
+<section class="section section--light" id="pain">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-label">こんなお悩みありませんか？</span>
+      <h2 class="sec-title">産後・デスクワークの<span>つらさ</span>、<br>一人で抱えていませんか？</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">🤰</div>
+        <p class="pain-text">出産後から<br>腰痛が続いている</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">💆‍♀️</div>
+        <p class="pain-text">肩こり・首こりが<br>ひどくなった</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">😮‍💨</div>
+        <p class="pain-text">疲れが取れず<br>いつもだるい</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">👗</div>
+        <p class="pain-text">産後から体型が<br>なかなか戻らない</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🖥️</div>
+        <p class="pain-text">デスクワークで<br>姿勢が悪くなった</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🏥</div>
+        <p class="pain-text">他院で施術を<br>受けても改善しない</p>
+      </div>
+    </div>
+    <div class="pain-bottom">
+      <p>その不調、<strong>骨盤のゆがみ</strong>が原因かもしれません。<br>
+      yururiでは根本から整え、「繰り返さない身体」をつくります。</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== REASONS ========== -->
+<section class="section" id="reasons">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-label">Why yururi?</span>
+      <h2 class="sec-title">yururiが<span>選ばれる</span>3つの理由</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="reason-grid">
+
+      <div class="reason-card">
+        <span class="reason-num">REASON 01</span>
+        <div class="reason-icon"><i class="fa-solid fa-venus"></i></div>
+        <h3 class="reason-title">完全女性専用・女性施術師のみ在籍</h3>
+        <p class="reason-text">施術スタッフは全員女性。肌の露出をともなう施術でも、安心してリラックスしていただけます。「男性施術師が苦手で整体に行けなかった」という方に多くお選びいただいています。</p>
+        <span class="reason-tag">女性専用サロン</span>
+      </div>
+
+      <div class="reason-card">
+        <span class="reason-num">REASON 02</span>
+        <div class="reason-icon"><i class="fa-solid fa-baby"></i></div>
+        <h3 class="reason-title">赤ちゃん・お子様の同室OK</h3>
+        <p class="reason-text">産後のママが一番困るのが「子どもを預ける場所がない」こと。yururiでは赤ちゃんや小さなお子様の同室に対応しています。授乳・おむつ替えスペースも完備しています。</p>
+        <span class="reason-tag">子連れOK</span>
+      </div>
+
+      <div class="reason-card">
+        <span class="reason-num">REASON 03</span>
+        <div class="reason-icon"><i class="fa-solid fa-shield-heart"></i></div>
+        <h3 class="reason-title">初回体験2,980円＋満足保証制度</h3>
+        <p class="reason-text">「合わなかったらどうしよう」という不安は無用です。初回体験は通常の70%OFFの2,980円でお試しいただけます。万が一ご満足いただけない場合は、全額ご返金します。</p>
+        <span class="reason-tag">全額返金保証</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== MENU ========== -->
+<section class="section section--light" id="menu">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-label">Menu &amp; Price</span>
+      <h2 class="sec-title">メニュー・<span>料金</span></h2>
+      <p class="sec-desc">すべてのメニューに初回体験割引が適用されます。まずはお気軽にご体験ください。</p>
+      <div class="divider"></div>
+    </div>
+    <div class="menu-grid">
+
+      <div class="menu-card featured">
+        <div class="menu-head">
+          <div class="menu-name">産後骨盤矯正コース</div>
+          <div class="menu-dur"><i class="fa-regular fa-clock"></i> 60分</div>
+        </div>
+        <div class="menu-body">
+          <div class="menu-price-wrap">
+            <div>
+              <span class="price-trial-label">初回体験価格</span>
+              <span class="price-trial">2,980<small>円</small></span>
+            </div>
+            <span class="price-normal">通常 9,800円</span>
+          </div>
+          <p class="menu-desc">産後の骨盤のゆがみを丁寧にほぐし、正しい位置に整えます。ホルモンバランスの変化で緩んだ骨盤靭帯へ専門的にアプローチ。産後3ヶ月〜対応可能です。</p>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-head green">
+          <div class="menu-name">姿勢・肩こり改善コース</div>
+          <div class="menu-dur"><i class="fa-regular fa-clock"></i> 45分</div>
+        </div>
+        <div class="menu-body">
+          <div class="menu-price-wrap">
+            <span class="price-regular">6,600<small>円</small></span>
+          </div>
+          <p class="menu-desc">デスクワークや授乳による猫背・巻き肩・首こりにアプローチ。胸郭と肩甲骨周りをほぐし、呼吸も深くなります。</p>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-head">
+          <div class="menu-name">全身バランス整体コース</div>
+          <div class="menu-dur"><i class="fa-regular fa-clock"></i> 60分</div>
+        </div>
+        <div class="menu-body">
+          <div class="menu-price-wrap">
+            <span class="price-regular">8,800<small>円</small></span>
+          </div>
+          <p class="menu-desc">骨盤・背骨・肩・首を全身バランスで診ながら総合的に整えます。「なんとなく全身がしんどい」「疲れが取れない」方におすすめです。</p>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-head green">
+          <div class="menu-name">骨盤矯正＋小顔矯正セット</div>
+          <div class="menu-dur"><i class="fa-regular fa-clock"></i> 90分</div>
+        </div>
+        <div class="menu-body">
+          <div class="menu-price-wrap">
+            <span class="price-regular">12,000<small>円</small></span>
+          </div>
+          <p class="menu-desc">骨盤矯正と小顔矯正を組み合わせた人気のセットコース。姿勢と顔のバランスを同時に整え、全身のトータルケアができます。</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="menu-guarantee">
+      <h3><i class="fa-solid fa-shield-halved" style="color:var(--pink);margin-right:8px;"></i>満足保証について</h3>
+      <p>初回体験で「効果を感じられなかった」場合は、その場でお申し出ください。<br>
+      全額ご返金いたします。費用を気にせず、まずはお試しください。</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== COMPARISON ========== -->
+<section class="section" id="comparison">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-label">Comparison</span>
+      <h2 class="sec-title">他院との<span>違い</span></h2>
+      <p class="sec-desc">yururiが選ばれる理由を、具体的な項目で比較しました。</p>
+      <div class="divider"></div>
+    </div>
+    <div class="comparison-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th class="col-feat">比較項目</th>
+            <th class="col-us">骨盤整体院 yururi</th>
+            <th class="col-other">一般的な整体院</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-feat">女性施術師のみ在籍</td>
+            <td class="col-us"><span class="check">✓</span> 全員女性</td>
+            <td><span class="cross">–</span> 男女混在が多い</td>
+          </tr>
+          <tr>
+            <td class="col-feat">赤ちゃん・子連れ対応</td>
+            <td class="col-us"><span class="check">✓</span> 同室OK</td>
+            <td><span class="cross">–</span> 対応不可が多い</td>
+          </tr>
+          <tr>
+            <td class="col-feat">初回体験価格</td>
+            <td class="col-us"><span class="check">✓</span> 2,980円〜</td>
+            <td><span class="cross">–</span> 通常料金のみ</td>
+          </tr>
+          <tr>
+            <td class="col-feat">満足保証（返金制度）</td>
+            <td class="col-us"><span class="check">✓</span> 全額返金保証</td>
+            <td><span class="cross">–</span> なし</td>
+          </tr>
+          <tr>
+            <td class="col-feat">産後ケア専門資格</td>
+            <td class="col-us"><span class="check">✓</span> 専門資格保有</td>
+            <td><span class="cross">–</span> 一般施術のみ</td>
+          </tr>
+          <tr>
+            <td class="col-feat">当日予約</td>
+            <td class="col-us"><span class="check">✓</span> 対応可能</td>
+            <td><span class="cross">–</span> 要事前予約が多い</td>
+          </tr>
+          <tr>
+            <td class="col-feat">夜間営業（〜21時）</td>
+            <td class="col-us"><span class="check">✓</span> 平日21時まで</td>
+            <td><span class="cross">–</span> 19時終わりが多い</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="section section--primary" id="voice">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-label">Customer Voice</span>
+      <h2 class="sec-title">お客様の<span>声</span></h2>
+      <p class="sec-desc">実際にご来院いただいたお客様の感想をご紹介します。</p>
+      <div class="divider"></div>
+    </div>
+    <div class="voice-grid">
+
+      <div class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">「産後8ヶ月、腰の痛みで抱っこもつらくなっていました。他院で数回通っても変わらなかったのに、yururiでは1回目の施術後にすっと楽になって驚きました。赤ちゃんと一緒に行けるのも本当に助かります。」</p>
+        <div class="voice-author">
+          <div class="author-avatar">👩</div>
+          <div>
+            <div class="author-name">Y.K さま</div>
+            <div class="author-detail">30代・産後9ヶ月・主婦</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">「デスクワークで毎日肩が石みたいに固まっていました。施術中も先生が丁寧に説明してくださり、安心して受けられました。帰り道で首が軽くなっているのを感じて感動しました！またすぐ予約しました。」</p>
+        <div class="voice-author">
+          <div class="author-avatar">👩‍💼</div>
+          <div>
+            <div class="author-name">M.T さま</div>
+            <div class="author-detail">28歳・会社員・肩こり改善目的</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">「ブライダル前に姿勢を整えたくて来院しました。3ヶ月で猫背が改善されて、ウエディングドレスの写真映りが格段に変わりました。先生の技術と気遣いが丁寧で、結婚後も通い続けています。」</p>
+        <div class="voice-author">
+          <div class="author-avatar">👰</div>
+          <div>
+            <div class="author-name">A.S さま</div>
+            <div class="author-detail">32歳・姿勢矯正・ブライダル目的</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== PROFILE ========== -->
+<section class="section" id="profile">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-label">Director Profile</span>
+      <h2 class="sec-title">院長<span>プロフィール</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="profile-grid">
+      <div class="profile-img">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&q=80" alt="院長 中村麻衣" loading="lazy">
+      </div>
+      <div>
+        <div class="profile-name">中村 麻衣</div>
+        <div class="profile-role">骨盤整体院 yururi 院長</div>
+        <div class="badge-list">
+          <span class="badge">整体師免許</span>
+          <span class="badge">産後ケアアドバイザー</span>
+          <span class="badge">骨盤矯正専門資格</span>
+          <span class="badge">女性健康支援士</span>
+        </div>
+        <p class="profile-bio">
+          2人の子を持つ母として、産後の身体の変化を自分自身で経験。「産後ケアの専門家が少ない」と感じたことをきっかけに、産後骨盤矯正の専門資格を取得。整体師歴13年、累計3,500人以上の女性の施術に携わってきました。<br><br>
+          「怖い」「痛そう」「子どもを預けられない」という理由で整体に行けなかった女性に、安心して身体を任せてもらえる場所を作りたい——その想いから、女性専用・子連れOKのyururiを開院しました。
+        </p>
+        <div class="profile-stats">
+          <div>
+            <div class="ps-num">13<small>年</small></div>
+            <div class="ps-label">施術歴</div>
+          </div>
+          <div>
+            <div class="ps-num">3,500<small>人+</small></div>
+            <div class="ps-label">累計施術数</div>
+          </div>
+          <div>
+            <div class="ps-num">4<small>資格</small></div>
+            <div class="ps-label">専門資格保有</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== FAQ ========== -->
+<section class="section section--light" id="faq">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-label">FAQ</span>
+      <h2 class="sec-title">よくある<span>ご質問</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-inner"><span class="faq-q-badge">Q</span>産後どのくらいから通えますか？</span>
+          <i class="fa-solid fa-chevron-down faq-chevron"></i>
+        </div>
+        <div class="faq-a">産後3ヶ月以降を目安にご来院いただけます。出産直後は骨盤周辺の靭帯がまだ不安定なため、十分に回復してからのご来院をお勧めしています。帝王切開の場合は術後の経過によって異なりますので、初回カウンセリングでご相談ください。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-inner"><span class="faq-q-badge">Q</span>何回くらい通えば効果が出ますか？</span>
+          <i class="fa-solid fa-chevron-down faq-chevron"></i>
+        </div>
+        <div class="faq-a">症状や身体の状態によって異なりますが、多くのお客様が3〜5回の施術で変化を実感されています。初回のカウンセリングで現状を丁寧にお聞きし、施術の目安回数と期間をご提案します。無理な通院プランを押し付けることは一切ありません。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-inner"><span class="faq-q-badge">Q</span>施術は痛くないですか？</span>
+          <i class="fa-solid fa-chevron-down faq-chevron"></i>
+        </div>
+        <div class="faq-a">yururiでは「痛みのない施術」を基本としています。骨格に無理な力を加えず、筋膜と筋肉を丁寧にほぐしながら骨盤を整えるアプローチを採用しています。施術中は常に体の反応を確認しながら進めますので、痛みや不安を感じたらすぐにお声がけください。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-inner"><span class="faq-q-badge">Q</span>赤ちゃんを連れて行っても大丈夫ですか？</span>
+          <i class="fa-solid fa-chevron-down faq-chevron"></i>
+        </div>
+        <div class="faq-a">はい、問題ございません。施術室にベビーマットを用意しており、赤ちゃんを横に寝かせたまま施術を受けていただけます。授乳スペース・おむつ替えシートも完備しています。泣いてしまっても大丈夫ですので、安心していらしてください。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-inner"><span class="faq-q-badge">Q</span>当日予約はできますか？</span>
+          <i class="fa-solid fa-chevron-down faq-chevron"></i>
+        </div>
+        <div class="faq-a">はい、当日のご予約も承っております。ただし満席の場合はご案内が難しいため、事前のご予約をおすすめしています。当日のご予約はお電話（03-0000-0000）でご確認ください。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-inner"><span class="faq-q-badge">Q</span>満足保証（返金制度）はどう使えますか？</span>
+          <i class="fa-solid fa-chevron-down faq-chevron"></i>
+        </div>
+        <div class="faq-a">初回体験の施術後に「効果を感じられなかった」「期待と違った」と感じた場合は、その場でお申し出ください。受付にてその場で全額ご返金いたします。ご返金に際しての条件や質問は一切ありませんのでご安心ください。</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== ACCESS ========== -->
+<section class="section" id="access">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-label">Access</span>
+      <h2 class="sec-title">アクセス・<span>営業時間</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="access-grid">
+      <div class="access-map">
+        <i class="fa-solid fa-map-location-dot"></i>
+        <p>Google マップをここに埋め込みます</p>
+        <p style="font-size:.72rem;color:var(--text-light);">（架空のデモ表示）</p>
+      </div>
+      <div class="access-info">
+        <div class="ai-item">
+          <div class="ai-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <div class="ai-label">住所</div>
+            <div class="ai-value">東京都世田谷区三軒茶屋1-00-00 ○○ビル3F（架空）</div>
+            <div class="ai-sub">東急田園都市線「三軒茶屋駅」南口 徒歩3分</div>
+          </div>
+        </div>
+        <div class="ai-item">
+          <div class="ai-icon"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <div class="ai-label">電話番号</div>
+            <div class="ai-value">03-0000-0000（架空）</div>
+            <div class="ai-sub">受付時間内にお気軽にどうぞ</div>
+          </div>
+        </div>
+        <div class="ai-item">
+          <div class="ai-icon"><i class="fa-regular fa-clock"></i></div>
+          <div>
+            <div class="ai-label">営業時間</div>
+            <div class="hours-grid">
+              <span class="h-day">月・水〜金</span><span class="h-time">10:00〜21:00</span>
+              <span class="h-day">土・日・祝</span><span class="h-time">10:00〜19:00</span>
+              <span class="h-day">火曜日</span><span class="h-off">定休日</span>
+            </div>
+          </div>
+        </div>
+        <div class="ai-item">
+          <div class="ai-icon"><i class="fa-solid fa-circle-info"></i></div>
+          <div>
+            <div class="ai-label">施設情報</div>
+            <div class="ai-value" style="font-size:.88rem;">完全予約制・当日予約OK<br>授乳スペース・おむつ替えシート完備<br>エレベーターあり（バリアフリー対応）</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== BOOKING ========== -->
+<section class="section section--primary" id="booking">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-label">Web Reservation</span>
+      <h2 class="sec-title">初回体験を<span>ご予約</span>する</h2>
+      <p class="sec-desc">フォームにご記入ください。確認後、24時間以内にご連絡いたします。</p>
+      <div class="divider"></div>
+    </div>
+    <div class="booking-wrap">
+      <div class="demo-notice">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>【ポートフォリオ用デモ】このフォームは外部送信・データ保持を一切行いません。</span>
+      </div>
+      <form id="bookingForm" autocomplete="off" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">お名前 <span class="f-req">必須</span></label>
+            <input type="text" class="f-input" placeholder="山田 花子" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label class="form-label">フリガナ <span class="f-req">必須</span></label>
+            <input type="text" class="f-input" placeholder="ヤマダ ハナコ" autocomplete="off">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">メールアドレス <span class="f-req">必須</span></label>
+          <input type="email" class="f-input" placeholder="example@email.com" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label class="form-label">電話番号 <span class="f-req">必須</span></label>
+          <input type="tel" class="f-input" placeholder="090-0000-0000" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label class="form-label">ご希望のメニュー <span class="f-req">必須</span></label>
+          <select class="f-select">
+            <option value="">選択してください</option>
+            <option>産後骨盤矯正コース（初回体験 2,980円）</option>
+            <option>姿勢・肩こり改善コース（6,600円）</option>
+            <option>全身バランス整体コース（8,800円）</option>
+            <option>骨盤矯正＋小顔矯正セット（12,000円）</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">ご希望日時 <span class="f-req">必須</span></label>
+          <input type="text" class="f-input" placeholder="例：5月10日（土）14:00 ／ 5月11日（日）午前" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label class="form-label">お悩み・ご要望 <span class="f-opt">任意</span></label>
+          <textarea class="f-textarea" placeholder="産後8ヶ月で腰痛があります。赤ちゃん（7ヶ月）を連れて行きたいです。" autocomplete="off"></textarea>
+        </div>
+        <div class="form-foot">
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;max-width:340px;">
+            <i class="fa-regular fa-paper-plane"></i> 予約リクエストを送る
+          </button>
+          <p class="form-note">送信後、24時間以内にメールまたはお電話でご連絡いたします。</p>
+        </div>
+      </form>
+      <div class="demo-done" id="demoDone">
+        <i class="fa-solid fa-circle-check"></i>
+        <p><strong>【デモ完了】</strong><br>実際のサイトではここで予約確認メッセージが表示されます。<br>入力データは送信・保存されていません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== FOOTER ========== -->
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">yururi</div>
+        <p class="footer-desc">
+          骨盤整体院 yururi<br>
+          産後・女性専門の整体院です。<br>
+          東京都世田谷区三軒茶屋（架空）<br>
+          TEL: 03-0000-0000
+        </p>
+      </div>
+      <div>
+        <div class="footer-col-h">メニュー</div>
+        <div class="footer-links">
+          <a href="#reasons">選ばれる理由</a>
+          <a href="#menu">メニュー・料金</a>
+          <a href="#comparison">他院との違い</a>
+          <a href="#voice">お客様の声</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-h">ご来院について</div>
+        <div class="footer-links">
+          <a href="#profile">院長プロフィール</a>
+          <a href="#faq">よくある質問</a>
+          <a href="#access">アクセス</a>
+          <a href="#booking">Web予約</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2024 骨盤整体院 yururi. All Rights Reserved.</span>
+      <span class="footer-demo-tag">架空のデモサイトです</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ========== FLOATING CTA ========== -->
+<div class="float-cta" id="floatCta">
+  <a href="tel:03-0000-0000" class="float-btn float-btn-tel">
+    <i class="fa-solid fa-phone"></i> 電話で予約
+  </a>
+  <a href="#booking" class="float-btn float-btn-web">
+    <i class="fa-regular fa-calendar-check"></i> Web予約
+  </a>
+</div>
+
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+  /* -- Sticky header -- */
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  /* -- Floating CTA -- */
+  const floatCta = document.getElementById('floatCta');
+  window.addEventListener('scroll', () => {
+    floatCta.classList.toggle('show', window.scrollY > 500);
+  }, { passive: true });
+
+  /* -- Mobile hamburger -- */
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileNav.classList.toggle('open');
+  });
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileNav.classList.remove('open');
+    });
+  });
+
+  /* -- FAQ accordion -- */
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  /* -- Booking form: prevent submission & data retention -- */
+  const bookingForm = document.getElementById('bookingForm');
+  const demoDone    = document.getElementById('demoDone');
+  bookingForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.reset();                          // フィールドをクリア
+    this.style.display = 'none';           // フォームを非表示
+    demoDone.style.display = 'block';      // デモ完了メッセージを表示
+    demoDone.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return false;
+  });
+
+  /* -- Smooth scroll (anchor links) -- */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const id = this.getAttribute('href');
+      if (id === '#') return;
+      const target = document.querySelector(id);
+      if (target) {
+        e.preventDefault();
+        const offset = document.getElementById('header').offsetHeight + 16;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
