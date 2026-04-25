@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MamaTalk English | 忙しいママのためのオンライン英会話</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coral: '#E8735A',
+            'coral-light': '#F5C5B8',
+            'coral-dark': '#C4502A',
+            beige: '#FAF6F1',
+            charcoal: '#2D2D2D',
+            warmgray: '#8A8077',
+          },
+          fontFamily: {
+            noto: ['"Noto Sans JP"', 'sans-serif'],
+            playfair: ['"Playfair Display"', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Noto Sans JP', sans-serif; color: #2D2D2D; }
+    .lh-jp { line-height: 1.9; }
+    .faq-answer { display: none; }
+    .faq-answer.open { display: block; }
+    .faq-icon { transition: transform 0.2s ease; display: inline-block; }
+    .faq-icon.rotated { transform: rotate(45deg); }
+    /* スクロールアニメーション */
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- ナビゲーション -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="font-playfair text-2xl font-bold text-coral">MamaTalk</span>
+        <span class="text-warmgray text-sm tracking-widest">English</span>
+      </div>
+      <a href="#trial" class="bg-coral text-white text-sm font-bold px-6 py-2 rounded-full hover:bg-coral-dark transition-colors duration-200">
+        無料体験を始める
+      </a>
+    </div>
+  </header>
+
+  <!-- ① ヒーローセクション -->
+  <section class="bg-gradient-to-b from-coral-light to-white py-20 px-6">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+      <div class="flex-1 text-center md:text-left">
+        <p class="font-playfair italic text-coral text-lg mb-4">Online English for Moms</p>
+        <h1 class="font-bold text-4xl md:text-5xl leading-tight text-charcoal mb-6">
+          子育ての合間に、<br class="hidden md:block">英語が話せる<br>自分になる。
+        </h1>
+        <p class="text-warmgray text-lg lh-jp mb-10">
+          1日25分。スマホひとつ。<br>
+          どんなに忙しくても、英語はあきらめなくていい。
+        </p>
+        <a href="#trial" class="inline-block bg-coral text-white font-bold text-lg px-10 py-4 rounded-full shadow-md hover:bg-coral-dark transition-colors duration-200">
+          まずは7日間、無料で試してみる →
+        </a>
+        <p class="text-warmgray text-sm mt-4">クレジットカード不要・メールアドレスだけでOK</p>
+      </div>
+      <div class="flex-1 flex justify-center">
+        <!-- ※ 本番環境では「スマホでレッスン中のママ」の実写素材に差し替えてください -->
+        <img
+          src="https://picsum.photos/seed/mamatalk/520/420"
+          alt="スマホでレッスンを受けるママのイメージ"
+          class="rounded-2xl shadow-lg w-full max-w-sm md:max-w-md object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ② 共感・課題提起 -->
+  <section class="bg-white py-20 px-6 fade-in-section">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-bold text-3xl text-center text-charcoal mb-12">
+        こんな気持ち、ありませんか？
+      </h2>
+      <div class="space-y-6">
+        <div class="bg-white border-l-4 border-coral rounded-xl shadow-sm p-6">
+          <p class="text-charcoal lh-jp text-lg">
+            <span class="text-coral text-3xl font-playfair leading-none mr-1">"</span>子どもが生まれてから、英語の勉強なんて後回しにしてきた。
+          </p>
+        </div>
+        <div class="bg-white border-l-4 border-coral rounded-xl shadow-sm p-6">
+          <p class="text-charcoal lh-jp text-lg">
+            <span class="text-coral text-3xl font-playfair leading-none mr-1">"</span>英会話を始めたいけど、レッスンの時間が取れなくて。まとまった時間が来たら……と思ってるうちに、何年も経ってしまった。
+          </p>
+        </div>
+        <div class="bg-white border-l-4 border-coral rounded-xl shadow-sm p-6">
+          <p class="text-charcoal lh-jp text-lg">
+            <span class="text-coral text-3xl font-playfair leading-none mr-1">"</span>子どもに英語を教えてあげたい。でも自分自身、話せない。そのことが、少し後ろめたい。
+          </p>
+        </div>
+      </div>
+      <p class="font-playfair italic text-coral text-2xl text-center mt-12 leading-relaxed">
+        "その気持ち、ちゃんとわかります。<br>
+        MamaTalk は、そんなあなたのために作りました。"
+      </p>
+    </div>
+  </section>
+
+  <!-- ③ 選ばれる理由3選 -->
+  <section class="bg-beige py-20 px-6 fade-in-section">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-bold text-3xl text-center text-charcoal mb-12">
+        忙しいママでも続けられる、3つの理由
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl shadow-sm p-8 text-center">
+          <div class="w-16 h-16 bg-coral rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-lg text-charcoal mb-3">スキマ時間に、ちょうどいい25分</h3>
+          <p class="text-warmgray lh-jp text-sm">朝の家事が終わった後、お昼寝中、習い事の待ち時間。1レッスン25分だから、まとまった時間がなくても大丈夫。</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm p-8 text-center">
+          <div class="w-16 h-16 bg-coral rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-lg text-charcoal mb-3">育児経験のある女性講師だから、話しやすい</h3>
+          <p class="text-warmgray lh-jp text-sm">MamaTalk の講師は全員、育児と英語を両立してきた女性。「忙しいのに」なんて思われない。あなたのペースを理解してくれます。</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm p-8 text-center">
+          <div class="w-16 h-16 bg-coral rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-lg text-charcoal mb-3">スマホ1台で、どこでもレッスン</h3>
+          <p class="text-warmgray lh-jp text-sm">アプリのダウンロード不要。スマホのブラウザからすぐ始められます。場所も時間も、あなたが選んでいい。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ こんな方におすすめ -->
+  <section class="bg-white py-20 px-6 fade-in-section">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="font-bold text-3xl text-center text-charcoal mb-12">
+        MamaTalk が向いている方
+      </h2>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-4 border-b border-gray-100 pb-4">
+          <span class="text-coral text-xl font-bold mt-0.5 flex-shrink-0">✓</span>
+          <span class="text-charcoal lh-jp">子育て中で、まとまった勉強時間が取れない</span>
+        </li>
+        <li class="flex items-start gap-4 border-b border-gray-100 pb-4">
+          <span class="text-coral text-xl font-bold mt-0.5 flex-shrink-0">✓</span>
+          <span class="text-charcoal lh-jp">英語は学生のころ勉強していたけど、ずっと話せずにいる</span>
+        </li>
+        <li class="flex items-start gap-4 border-b border-gray-100 pb-4">
+          <span class="text-coral text-xl font-bold mt-0.5 flex-shrink-0">✓</span>
+          <span class="text-charcoal lh-jp">子どもに英語環境を作ってあげたい</span>
+        </li>
+        <li class="flex items-start gap-4 border-b border-gray-100 pb-4">
+          <span class="text-coral text-xl font-bold mt-0.5 flex-shrink-0">✓</span>
+          <span class="text-charcoal lh-jp">将来のキャリアに向けて、少しずつ準備を始めたい</span>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="text-coral text-xl font-bold mt-0.5 flex-shrink-0">✓</span>
+          <span class="text-charcoal lh-jp">「続けられなかった」過去があって、また挫折するのが怖い</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ⑤ レッスンの流れ -->
+  <section class="bg-beige py-20 px-6 fade-in-section">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-bold text-3xl text-center text-charcoal mb-16">
+        始め方はとってもシンプル
+      </h2>
+      <div class="flex flex-col md:flex-row items-start md:items-start gap-4 md:gap-2">
+        <div class="flex-1 text-center px-2">
+          <div class="w-16 h-16 bg-coral rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="font-playfair text-white text-2xl font-bold">1</span>
+          </div>
+          <h3 class="font-bold text-charcoal mb-2 text-sm md:text-base">無料体験に申し込む</h3>
+          <p class="text-warmgray text-xs md:text-sm lh-jp">メールアドレスだけで登録完了。クレジットカードは不要です。</p>
+        </div>
+        <div class="hidden md:flex items-center justify-center pt-6 text-warmgray text-2xl flex-shrink-0">→</div>
+        <div class="md:hidden text-center text-coral text-xl w-full">↓</div>
+        <div class="flex-1 text-center px-2">
+          <div class="w-16 h-16 bg-coral rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="font-playfair text-white text-2xl font-bold">2</span>
+          </div>
+          <h3 class="font-bold text-charcoal mb-2 text-sm md:text-base">講師を選ぶ</h3>
+          <p class="text-warmgray text-xs md:text-sm lh-jp">プロフィール・得意テーマ・口コミを見て、自分に合う講師を選べます。</p>
+        </div>
+        <div class="hidden md:flex items-center justify-center pt-6 text-warmgray text-2xl flex-shrink-0">→</div>
+        <div class="md:hidden text-center text-coral text-xl w-full">↓</div>
+        <div class="flex-1 text-center px-2">
+          <div class="w-16 h-16 bg-coral rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="font-playfair text-white text-2xl font-bold">3</span>
+          </div>
+          <h3 class="font-bold text-charcoal mb-2 text-sm md:text-base">予約してレッスン開始</h3>
+          <p class="text-warmgray text-xs md:text-sm lh-jp">好きな日時を選んで予約するだけ。当日はリンクをタップするだけでスタート。</p>
+        </div>
+        <div class="hidden md:flex items-center justify-center pt-6 text-warmgray text-2xl flex-shrink-0">→</div>
+        <div class="md:hidden text-center text-coral text-xl w-full">↓</div>
+        <div class="flex-1 text-center px-2">
+          <div class="w-16 h-16 bg-coral rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="font-playfair text-white text-2xl font-bold">4</span>
+          </div>
+          <h3 class="font-bold text-charcoal mb-2 text-sm md:text-base">毎日少しずつ積み上げる</h3>
+          <p class="text-warmgray text-xs md:text-sm lh-jp">週2回からOK。無理なく続けるペースを、一緒に見つけましょう。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥ 料金プラン -->
+  <section class="bg-white py-20 px-6 fade-in-section">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-bold text-3xl text-center text-charcoal mb-4">
+        シンプルな料金体系。いつでも解約できます。
+      </h2>
+      <p class="text-center text-warmgray mb-12">※ すべてのプランに7日間無料体験付き</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- ライトプラン -->
+        <div class="border-2 border-coral-light rounded-2xl p-8">
+          <h3 class="font-bold text-xl text-charcoal mb-2">ライトプラン</h3>
+          <p class="text-warmgray text-sm mb-6">週2回・じっくり続けたい方に</p>
+          <div class="mb-1">
+            <span class="text-4xl font-bold text-coral">4,980</span>
+            <span class="text-warmgray text-sm">円（税込）／月</span>
+          </div>
+          <p class="text-warmgray text-sm mb-8">1レッスン約623円</p>
+          <ul class="space-y-3 text-sm text-charcoal mb-8">
+            <li class="flex items-center gap-2"><span class="text-coral">✓</span> 月8回（週2回）レッスン</li>
+            <li class="flex items-center gap-2"><span class="text-coral">✓</span> 1レッスン25分</li>
+            <li class="flex items-center gap-2"><span class="text-coral">✓</span> テキスト・教材すべて込み</li>
+            <li class="flex items-center gap-2"><span class="text-coral">✓</span> 7日間無料体験付き</li>
+          </ul>
+          <a href="#trial" class="block text-center border-2 border-coral text-coral font-bold py-3 rounded-full hover:bg-coral hover:text-white transition-colors duration-200">
+            このプランで試す
+          </a>
+        </div>
+        <!-- スタンダードプラン -->
+        <div class="border-2 border-coral rounded-2xl overflow-hidden shadow-md">
+          <div class="bg-coral text-white text-center text-sm font-bold py-2">
+            ✨ おすすめ
+          </div>
+          <div class="p-8">
+            <h3 class="font-bold text-xl text-charcoal mb-2">スタンダードプラン</h3>
+            <p class="text-warmgray text-sm mb-6">週4回・しっかり伸ばしたい方に</p>
+            <div class="mb-1">
+              <span class="text-4xl font-bold text-coral">7,980</span>
+              <span class="text-warmgray text-sm">円（税込）／月</span>
+            </div>
+            <p class="text-warmgray text-sm mb-8">1レッスン約499円</p>
+            <ul class="space-y-3 text-sm text-charcoal mb-8">
+              <li class="flex items-center gap-2"><span class="text-coral">✓</span> 月16回（週4回）レッスン</li>
+              <li class="flex items-center gap-2"><span class="text-coral">✓</span> 1レッスン25分</li>
+              <li class="flex items-center gap-2"><span class="text-coral">✓</span> テキスト・教材すべて込み</li>
+              <li class="flex items-center gap-2"><span class="text-coral font-bold">✓</span> <span class="font-bold">復習用音声ダウンロード付き</span></li>
+              <li class="flex items-center gap-2"><span class="text-coral">✓</span> 7日間無料体験付き</li>
+            </ul>
+            <a href="#trial" class="block text-center bg-coral text-white font-bold py-3 rounded-full hover:bg-coral-dark transition-colors duration-200">
+              このプランで試す
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="text-center text-warmgray text-sm mt-8">
+        ※ 無料体験期間中の解約は完全無料です。<br>
+        ※ 2回目以降の請求は、体験終了後にお知らせします。
+      </p>
+    </div>
+  </section>
+
+  <!-- ⑦ 受講者の声 -->
+  <section class="bg-beige py-20 px-6 fade-in-section">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-bold text-3xl text-center text-charcoal mb-12">
+        「私にもできた」の声が届いています
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl shadow-sm p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 bg-coral-light rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="font-bold text-coral text-lg">A</span>
+            </div>
+            <div>
+              <p class="font-bold text-charcoal text-sm">Aさん</p>
+              <p class="text-warmgray text-xs">38歳・2児のママ</p>
+            </div>
+          </div>
+          <p class="text-warmgray text-sm lh-jp">
+            <span class="text-coral text-2xl font-playfair leading-none">"</span>
+            産後5年、英語は完全にあきらめていました。でも子どものお昼寝中に25分だけ試してみたら、あっという間に3ヶ月続いていました。講師の先生が育児の話をすごく聞いてくれて、緊張がほぐれました。
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 bg-coral-light rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="font-bold text-coral text-lg">B</span>
+            </div>
+            <div>
+              <p class="font-bold text-charcoal text-sm">Bさん</p>
+              <p class="text-warmgray text-xs">41歳・フルタイム勤務</p>
+            </div>
+          </div>
+          <p class="text-warmgray text-sm lh-jp">
+            <span class="text-coral text-2xl font-playfair leading-none">"</span>
+            仕事と育児でへとへとだったので、また三日坊主になると思ってた。でも週2回だけでいいと思ったら、気がついたら半年経っていました。海外のお客さまに英語でメールを送れた日は本当にうれしかった。
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 bg-coral-light rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="font-bold text-coral text-lg">C</span>
+            </div>
+            <div>
+              <p class="font-bold text-charcoal text-sm">Cさん</p>
+              <p class="text-warmgray text-xs">34歳・専業主婦</p>
+            </div>
+          </div>
+          <p class="text-warmgray text-sm lh-jp">
+            <span class="text-coral text-2xl font-playfair leading-none">"</span>
+            子どもに英語を教えたくて始めました。今では子どもと一緒に英語の絵本を読むのが日課になっています。MamaTalk を選んで、本当によかったです。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑧ FAQ -->
+  <section class="bg-white py-20 px-6 fade-in-section">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-bold text-3xl text-center text-charcoal mb-12">
+        よくあるご質問
+      </h2>
+      <div class="space-y-2">
+        <div class="border border-gray-100 rounded-xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left hover:bg-beige transition-colors duration-200">
+            <span class="font-bold text-charcoal text-sm md:text-base"><span class="text-coral mr-2">Q</span>英語はほとんど話せませんが大丈夫ですか？</span>
+            <span class="faq-icon text-coral text-2xl font-light ml-4 flex-shrink-0">＋</span>
+          </button>
+          <div class="faq-answer px-6 pb-6 text-warmgray lh-jp text-sm">
+            はい、大丈夫です。完全初心者の方も多くご利用いただいています。初回カウンセリングで現在のレベルを確認し、最適な講師とコースをご提案します。
+          </div>
+        </div>
+        <div class="border border-gray-100 rounded-xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left hover:bg-beige transition-colors duration-200">
+            <span class="font-bold text-charcoal text-sm md:text-base"><span class="text-coral mr-2">Q</span>無料体験期間中に解約したら費用はかかりますか？</span>
+            <span class="faq-icon text-coral text-2xl font-light ml-4 flex-shrink-0">＋</span>
+          </button>
+          <div class="faq-answer px-6 pb-6 text-warmgray lh-jp text-sm">
+            一切かかりません。7日間の体験期間中に解約いただければ、料金は発生しません。クレジットカードの登録は、体験終了後の本申し込み時のみです。
+          </div>
+        </div>
+        <div class="border border-gray-100 rounded-xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left hover:bg-beige transition-colors duration-200">
+            <span class="font-bold text-charcoal text-sm md:text-base"><span class="text-coral mr-2">Q</span>スマホだけで受けられますか？</span>
+            <span class="faq-icon text-coral text-2xl font-light ml-4 flex-shrink-0">＋</span>
+          </button>
+          <div class="faq-answer px-6 pb-6 text-warmgray lh-jp text-sm">
+            はい。専用アプリは不要で、スマホのブラウザから受講できます。iPhoneでもAndroidでも対応しています。
+          </div>
+        </div>
+        <div class="border border-gray-100 rounded-xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left hover:bg-beige transition-colors duration-200">
+            <span class="font-bold text-charcoal text-sm md:text-base"><span class="text-coral mr-2">Q</span>子どもがそばにいてもレッスンを受けられますか？</span>
+            <span class="faq-icon text-coral text-2xl font-light ml-4 flex-shrink-0">＋</span>
+          </button>
+          <div class="faq-answer px-6 pb-6 text-warmgray lh-jp text-sm">
+            受けられます。講師はみなさん育児経験者のため、背景に子どもの声が聞こえても気にしません。ただし集中できる環境を確保できるとより効果的です。
+          </div>
+        </div>
+        <div class="border border-gray-100 rounded-xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left hover:bg-beige transition-colors duration-200">
+            <span class="font-bold text-charcoal text-sm md:text-base"><span class="text-coral mr-2">Q</span>いつでも解約できますか？</span>
+            <span class="faq-icon text-coral text-2xl font-light ml-4 flex-shrink-0">＋</span>
+          </button>
+          <div class="faq-answer px-6 pb-6 text-warmgray lh-jp text-sm">
+            はい。マイページからいつでも解約可能です。次回更新日の前日までに手続きすれば、翌月の請求は発生しません。
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑨ 最終CTA -->
+  <section id="trial" class="bg-coral py-24 px-6 text-center fade-in-section">
+    <div class="max-w-2xl mx-auto">
+      <p class="font-playfair italic text-white opacity-80 text-lg mb-4">Start your journey</p>
+      <h2 class="font-bold text-4xl text-white mb-6 leading-tight">
+        7日間、無料で<br>試してみませんか？
+      </h2>
+      <p class="text-white text-lg lh-jp mb-10 opacity-90">
+        「今さら英語なんて」「どうせ続かない」<br>
+        そう思っていた方ほど、MamaTalk で変わっていきます。<br><br>
+        まずは1回だけ、25分だけ。<br>
+        その1回が、あなたの英語を変えるかもしれません。
+      </p>
+      <form id="trial-form" onsubmit="submitTrial(event)" class="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-lg mx-auto">
+        <input
+          type="email"
+          placeholder="メールアドレスを入力"
+          required
+          class="w-full sm:flex-1 px-6 py-4 rounded-full text-charcoal text-base outline-none focus:ring-2 focus:ring-white shadow-md"
+        />
+        <button type="submit" class="w-full sm:w-auto bg-white text-coral font-bold text-base px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 whitespace-nowrap">
+          無料で試す →
+        </button>
+      </form>
+      <div id="trial-thanks" class="hidden mt-6 bg-white bg-opacity-20 rounded-2xl px-8 py-5">
+        <p class="text-white font-bold text-lg">ご登録ありがとうございます！</p>
+        <p class="text-white opacity-80 text-sm mt-1">確認メールをお送りしました。7日間、存分にお試しください。</p>
+      </div>
+      <p class="text-white opacity-70 text-sm mt-4">クレジットカード登録は不要です。メールアドレスだけで始められます。</p>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="bg-charcoal text-white py-12 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-8">
+        <div>
+          <p class="font-playfair text-2xl font-bold text-coral mb-1">MamaTalk English</p>
+          <p class="text-gray-400 text-sm">忙しいママのためのオンライン英会話</p>
+        </div>
+        <div class="flex flex-wrap gap-6 text-sm text-gray-400">
+          <a href="#" class="hover:text-white transition-colors">プライバシーポリシー</a>
+          <a href="#" class="hover:text-white transition-colors">特定商取引法に基づく表記</a>
+          <a href="#" class="hover:text-white transition-colors">お問い合わせ</a>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-6 text-center text-gray-500 text-xs">
+        <p>運営：株式会社MamaTalk（架空） ｜ support@mamatalk-english.jp（架空）</p>
+        <p class="mt-1">© 2026 MamaTalk English. All rights reserved. ※本サイトはポートフォリオ用架空サービスです。</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ アコーディオン
+    function toggleFaq(button) {
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector('.faq-icon');
+      const isOpen = answer.classList.contains('open');
+
+      document.querySelectorAll('.faq-answer').forEach(el => el.classList.remove('open'));
+      document.querySelectorAll('.faq-icon').forEach(el => {
+        el.classList.remove('rotated');
+        el.textContent = '＋';
+      });
+
+      if (!isOpen) {
+        answer.classList.add('open');
+        icon.classList.add('rotated');
+        icon.textContent = '－';
+      }
+    }
+
+    // 無料体験フォーム送信
+    function submitTrial(e) {
+      e.preventDefault();
+      document.getElementById('trial-form').classList.add('hidden');
+      document.getElementById('trial-thanks').classList.remove('hidden');
+    }
+
+    // スクロールフェードイン
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
